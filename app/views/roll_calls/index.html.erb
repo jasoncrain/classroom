@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Roll Calls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Teacher</th>
+      <th>Salary</th>
+      <th>Pet</th>
+      <th>Breed</th>
+      <th>Age</th>
+      <th>Vaccinated</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roll_calls.each do |roll_call| %>
+      <tr>
+        <td><%= roll_call.name %></td>
+        <td><%= roll_call.age %></td>
+        <td><%= roll_call.teacher %></td>
+        <td><%= roll_call.salary %></td>
+        <td><%= roll_call.pet %></td>
+        <td><%= roll_call.breed %></td>
+        <td><%= roll_call.age %></td>
+        <td><%= roll_call.vaccinated %></td>
+        <td><%= link_to 'Show', roll_call %></td>
+        <td><%= link_to 'Edit', edit_roll_call_path(roll_call) %></td>
+        <td><%= link_to 'Destroy', roll_call, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roll call', new_roll_call_path %>
